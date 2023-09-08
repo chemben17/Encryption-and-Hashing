@@ -6,12 +6,12 @@ import base64
 import hashlib
 import time as t
 
-
+#  a function that allows our input display to be in intervals
 def slowdownoutput(text, delay = 0.1) :
     for character in text:
         print(character, end='', flush=True)
         t.sleep(delay)
-
+# this function decrypts the encrypted using base64 as well.
 def decrypt_password(password):
     decod = base64.b64decode(password)
     decode = decod.decode()
@@ -21,7 +21,9 @@ def decrypt_password(password):
     # decodedPassword = decod.hexdigest()
     # print(decod)
     print("Now, let's verify the Hashed value of the decoded password, If it's the same with the inputed one")
+    # well hashing a function it needs to be encoded() : converted to byte
     encodedPassword = decode.encode()
+    # the encoded variable is then hashed
     hashedPassword = hashlib.sha256(encodedPassword)
     print(hashedPassword.hexdigest())
 
@@ -29,6 +31,7 @@ def encrypt_pass(password):
     print("Your input is", password, end='')
 
     response1 = input("Is that right? answer with y/n ")
+    # a conditional that depends on the users response
     if response1 == "y" or "Y":
         slowdownoutput("Generating SHA256 of your password", 0.18)
         print()
