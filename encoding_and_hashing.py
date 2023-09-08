@@ -6,7 +6,7 @@ import base64
 import hashlib
 import time as t
 
-#  a function that allows our input display to be in intervals
+#  a function that allows the user's input display to be in intervals
 def slowdownoutput(text, delay = 0.1) :
     for character in text:
         print(character, end='', flush=True)
