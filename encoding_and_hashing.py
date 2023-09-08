@@ -27,6 +27,8 @@ def decrypt_password(password):
     hashedPassword = hashlib.sha256(encodedPassword)
     print(hashedPassword.hexdigest())
 
+
+# a function that encrypts your input password using base64
 def encrypt_pass(password):
     print("Your input is", password, end='')
 
